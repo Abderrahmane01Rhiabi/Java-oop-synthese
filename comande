@@ -1,0 +1,15 @@
+PS C:\Users\Abderrahmane RHIABI\IdeaProjects\synthese-oop-abdou> java .\src\main\java\oop\abdou\Main.java -d target/classes  -> complier et apre met
+le dans un dossier target/classes
+
+tree
+
+PS C:\Users\Abderrahmane RHIABI\IdeaProjects\synthese-oop-abdou\target\classes> java oop.abdou.Main -> pour evite a chaque fois d'aller au repo
+en met => PS C:\Users\Abderrahmane RHIABI\IdeaProjects\synthese-oop-abdou> java -classpath .\target\classes\ oop.abdou.Main
+
+
+PS C:\Users\Abderrahmane RHIABI\IdeaProjects\synthese-oop-abdou> mvn compile -> pour automatise la compilation
+
+mvn test -> il fait la compilation et apres execute les test unitaire
+mvn package -> il fait les trois compilation et execute les test unitaire et apres il genere l'archive "jar"
+
+https://youtube.com/clip/UgkxQ-Dz1O49OXbtKq2ujwWUY1I0q5pvBLGk tomcat yosfi
