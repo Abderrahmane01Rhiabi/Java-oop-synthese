@@ -1,10 +1,12 @@
 package oop.abdou;
 
 import oop.abdou.model.BankAccount;
+import oop.abdou.model.CurrentAccount;
+import oop.abdou.model.SavingAccount;
 
 import java.awt.image.BandCombineOp;
 
-public class Main extends BankAccount {
+public class Main{
     public static void main(String[] args) {
 
         String s1 = new String("Abdou");
@@ -16,7 +18,7 @@ public class Main extends BankAccount {
         System.out.println("=================");
 
 
-        BankAccount c1 = new BankAccount();
+        BankAccount c1 = new CurrentAccount();
 
         //c1.setId("1");
         //c1.setStatus();
@@ -24,11 +26,11 @@ public class Main extends BankAccount {
         c1.setCurrency("MAD");
         afficher(c1);
 
-        BankAccount c2 = new BankAccount(4000,"MAD");
+        BankAccount c2 = new CurrentAccount(4000,"MAD",4000);
         afficher(c2);
 
         System.out.println("............................");
-        BankAccount c3 = new BankAccount(4000, "MAD");
+        BankAccount c3 = new SavingAccount(4000, "MAD",3.9);
 
         c3.setId(c2.getId());
         System.out.println(c3);

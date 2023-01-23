@@ -69,4 +69,7 @@ public abstract class BankAccount {
                 Objects.hashCode(this.balance)+
                 Objects.hashCode(this.currency);
     }
+
+    public abstract String getType();
+
 }

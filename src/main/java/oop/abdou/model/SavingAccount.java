@@ -19,4 +19,16 @@ public class SavingAccount extends BankAccount{
     public void setIntersetRate(double intersetRate) {
         this.intersetRate = intersetRate;
     }
+
+    @Override
+    public String toString() {
+        return "SavingAccount{" +
+                "intersetRate=" + intersetRate +" "+super.toString()+
+                '}';
+    }
+
+    @Override
+    public String getType() {
+        return "SAVING_ACCOUNT";
+    }
 }

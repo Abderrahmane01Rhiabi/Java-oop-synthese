@@ -19,4 +19,16 @@ public class CurrentAccount extends BankAccount{
     public void setOverDraft(double overDraft) {
         this.overDraft = overDraft;
     }
+
+    @Override
+    public String toString() {
+        return "CurrentAccount{" +
+                "overDraft=" + overDraft +" "+super.toString()+
+                '}';
+    }
+
+    @Override
+    public String getType() {
+        return "CURRENT_ACCOUNT";
+    }
 }
