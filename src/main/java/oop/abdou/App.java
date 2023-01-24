@@ -11,6 +11,15 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) throws JsonProcessingException {
+        BankAccount c = new BankAccount() { //Question : objet annonyme - programation fonctionel - programtion sequentiel
+            @Override
+            public String getType() {
+                return null;
+            }
+        };
+
+        c.printBankLogo();
+
         BankAccount[] accounts = new BankAccount[4]; //cration des handels
 
         for (int i = 0; i < accounts.length; i++) {
