@@ -1,7 +1,7 @@
 package oop.abdou.model;
 
 public class SavingAccount extends BankAccount{
-    private double intersetRate;
+    private double interestRate;
 
     public SavingAccount() {
         super();
@@ -9,21 +9,21 @@ public class SavingAccount extends BankAccount{
 
     public SavingAccount(double balance, String currency, double intersetRate) {
         super(balance, currency);
-        this.intersetRate = intersetRate;
+        this.interestRate = intersetRate;
     }
 
     public double getIntersetRate() {
-        return intersetRate;
+        return interestRate;
     }
 
     public void setIntersetRate(double intersetRate) {
-        this.intersetRate = intersetRate;
+        this.interestRate = intersetRate;
     }
 
     @Override
     public String toString() {
         return "SavingAccount{" +
-                "intersetRate=" + intersetRate +" "+super.toString()+
+                "intersetRate=" + interestRate +" "+super.toString()+
                 '}';
     }
 

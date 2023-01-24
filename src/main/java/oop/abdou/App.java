@@ -24,6 +24,14 @@ public class App {
 
         for (BankAccount acc : accounts){
             System.out.println(acc.getType());
+
+            if(acc instanceof CurrentAccount){
+                System.out.println("Over Draft  = "+((CurrentAccount)acc).getOverDraft());
+            }
+            if (acc instanceof SavingAccount){
+                System.out.println("Interest Rate = "+((SavingAccount)acc).getIntersetRate());
+            }
+
         }
 
         System.out.println("=======List=======");
@@ -67,6 +75,9 @@ public class App {
             System.out.println(toJason(valeur));
         }
 
+        //final int p = 3.14;
+
+
     }
 
     public static String toJason(Object o) throws JsonProcessingException {
@@ -74,4 +85,7 @@ public class App {
 
         return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(o);
     }
+    // format jason il a une relationa avec les getters
 }
+
+

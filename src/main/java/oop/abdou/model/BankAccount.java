@@ -72,4 +72,8 @@ public abstract class BankAccount {
 
     public abstract String getType();
 
+    public final void printBankLogo(){
+        System.out.println("************** BANK **************");
+    }
+
 }
