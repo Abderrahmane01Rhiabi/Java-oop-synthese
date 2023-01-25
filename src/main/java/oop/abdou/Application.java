@@ -62,7 +62,7 @@ public class Application {
             System.out.println(accountByiD2);
         } catch (AccountNotFoundException ac) {
             System.out.println(ac.getMessage());
-            ac.printStackTrace();
+            //ac.printStackTrace();
         }
 
         System.out.println("***********SUITE DE PROGRAMME***********");
