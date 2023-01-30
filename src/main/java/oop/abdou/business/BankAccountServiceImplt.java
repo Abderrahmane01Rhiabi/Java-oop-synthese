@@ -1,5 +1,6 @@
 package oop.abdou.business;
 
+
 import oop.abdou.exceptions.AccountNotFoundException;
 import oop.abdou.exceptions.BalancNotSufficientException;
 import oop.abdou.model.AccountStatus;
@@ -10,6 +11,7 @@ import oop.abdou.model.SavingAccount;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class BankAccountServiceImplt implements BankAccountService{
 
@@ -85,5 +87,78 @@ public class BankAccountServiceImplt implements BankAccountService{
 
         credit(accountDestination,amount);
         debit(accountSource,amount);
+    }
+
+    @Override
+    public List<BankAccount> getSavingAccounts() {
+
+
+        //Declarative Approach
+        List<BankAccount> result = bankAccountList.stream()
+                                                   .filter(acc -> acc instanceof SavingAccount)
+                                                   .collect(Collectors.toList());
+
+        /*
+        //Imperative Approach
+            List<BankAccount> result = new ArrayList<>();
+
+            for(BankAccount acc : bankAccountList){
+                if(acc instanceof SavingAccount){
+                    result.add(acc);
+                }
+
+                /*
+                if(acc.getType().equals("SAVING_ACCOUNT")){
+                    result.add(acc);
+                }
+                /
+            }
+        */
+        return result;
+
+    }
+
+    @Override
+    public List<BankAccount> getCurrentAccounts() {
+        return bankAccountList.stream()
+                              .filter(acc -> acc.getType().equals("CURRENT_ACCOUNT"))
+                              .collect(Collectors.toList());
+    }
+
+    @Override
+    public double getTotalBalance() {
+
+        /*
+        //Imperative Approach
+        double sum = 0;
+
+        for(BankAccount acc : bankAccountList){
+            sum += acc.getBalance();
+        }
+
+        return sum;
+        */
+
+        //Declarative Approach
+
+        return bankAccountList.stream()
+                              .map(acc -> acc.getBalance())
+                              .reduce(0.0,(a,v) -> a+v); //accumulator + valeur
+                                     //valeur accumulateur
+    }
+
+    @Override
+    public List<BankAccount> serchAccounts(Condition<BankAccount> condition) {
+
+        List<BankAccount> res = new ArrayList<>();
+
+        for(BankAccount acc : bankAccountList){
+            if(condition.test(acc)){
+                res.add(acc);
+            }
+        }
+
+        return res;
+
     }
 }
